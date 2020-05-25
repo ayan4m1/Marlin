@@ -171,9 +171,9 @@
 #if ENABLED(MK2_MULTIPLEXER)
 // Override the default DIO selector pins here, if needed.
 // Some pins files may provide defaults for these pins.
-// #define E_MUX0_PIN 40  // Always Required
-// #define E_MUX1_PIN 42  // Needed for 3 to 8 inputs
-// #define E_MUX2_PIN 44  // Needed for 5 to 8 inputs
+//#define E_MUX0_PIN 40  // Always Required
+//#define E_MUX1_PIN 42  // Needed for 3 to 8 inputs
+//#define E_MUX2_PIN 44  // Needed for 5 to 8 inputs
 #endif
 
 /**
@@ -234,7 +234,7 @@
     #define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
     #define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
     #define PARKING_EXTRUDER_SOLENOIDS_DELAY       250  // (ms) Delay for magnetic field. No delay if 0 or not defined.
-  // #define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
+  //#define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
 
   #elif ENABLED(MAGNETIC_PARKING_EXTRUDER)
 
@@ -493,25 +493,11 @@
   // Set/get with gcode: M301 E[extruder number, 0-2]
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
+
   // Creality Ender-3
   #define DEFAULT_Kp 21.73
   #define DEFAULT_Ki 1.54
   #define DEFAULT_Kd 76.55
-
-// Ultimaker
-//#define DEFAULT_Kp 22.2
-//#define DEFAULT_Ki 1.08
-//#define DEFAULT_Kd 114
-
-// MakerGear
-//#define DEFAULT_Kp 7.0
-//#define DEFAULT_Ki 0.1
-//#define DEFAULT_Kd 12
-
-// Mendel Parts V9 on 12V
-//#define DEFAULT_Kp 63.0
-//#define DEFAULT_Ki 2.25
-//#define DEFAULT_Kd 440
 
 #endif  // PIDTEMP
 
@@ -1084,7 +1070,7 @@
 // @section extruder
 
 #define DISABLE_E false  // For all extruders
-//#define DISABLE_INACTIVE_EXTRUDER // Keep only the active extruder enabled
+//#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
 
 // @section machine
 
@@ -1239,13 +1225,13 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-#define MESH_BED_LEVELING
+//#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+// #define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1344,7 +1330,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#define LCD_BED_LEVELING
+// #define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025  // (mm) Step size while manually probing Z axis.
@@ -1507,12 +1493,12 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
-#define PREHEAT_1_TEMP_BED    45
+#define PREHEAT_1_TEMP_HOTEND 195
+#define PREHEAT_1_TEMP_BED    50
 #define PREHEAT_1_FAN_SPEED   255  // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 240
+#define PREHEAT_2_TEMP_HOTEND 233
 #define PREHEAT_2_TEMP_BED    70
 #define PREHEAT_2_FAN_SPEED   255  // Value from 0 to 255
 
@@ -1641,7 +1627,7 @@
  *
  * View the current statistics with M78.
  */
-#define PRINTCOUNTER
+// #define PRINTCOUNTER
 
 //=============================================================================
 //============================= LCD and SD support ============================
@@ -2244,16 +2230,16 @@
 #endif
 
 // Support for Adafruit Neopixel LED driver
-//#define NEOPIXEL_LED
+#define NEOPIXEL_LED
 #if ENABLED(NEOPIXEL_LED)
-  #define NEOPIXEL_TYPE NEO_GRBW  // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
-  #define NEOPIXEL_PIN  4         // LED driving pin
+  #define NEOPIXEL_TYPE NEO_GRB  // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
+  #define NEOPIXEL_PIN  4        // LED driving pin
   //#define NEOPIXEL2_TYPE NEOPIXEL_TYPE
   //#define NEOPIXEL2_PIN    5
-  #define NEOPIXEL_PIXELS 30       // Number of LEDs in the strip, larger of 2 strips if 2 neopixel strips are used
+  #define NEOPIXEL_PIXELS 8        // Number of LEDs in the strip, larger of 2 strips if 2 neopixel strips are used
   #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
   #define NEOPIXEL_BRIGHTNESS 127  // Initial brightness (0-255)
-//#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
+  #define NEOPIXEL_STARTUP_TEST    // Cycle through colors at startup
 
 // Use a single Neopixel LED for static (background) lighting
 //#define NEOPIXEL_BKGD_LED_INDEX  0               // Index of the LED to use
