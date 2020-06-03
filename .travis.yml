@@ -10,3 +10,10 @@ install:
   - platformio update
 script:
   - platformio run
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: "~/.pio/build/sanguino1284p/firmware.bin"
+  skip_cleanup: true
+  on:
+    tags: true
