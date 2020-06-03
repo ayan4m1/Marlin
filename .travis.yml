@@ -13,7 +13,7 @@ script:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: ".pio/build/sanguino1284p/firmware.hex"
+  file: ".pio/build/STM32F103RC_btt_512K/firmware.bin"
   skip_cleanup: true
   on:
     tags: true
