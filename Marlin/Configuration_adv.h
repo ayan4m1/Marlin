@@ -1994,7 +1994,7 @@
                                                  // This short retract is done immediately, before parking the nozzle.
   #define FILAMENT_CHANGE_UNLOAD_FEEDRATE    10   // (mm/s) Unload filament feedrate. This can be pretty fast.
   #define FILAMENT_CHANGE_UNLOAD_ACCEL       25   // (mm/s^2) Lower acceleration may allow a faster feedrate.
-  #define FILAMENT_CHANGE_UNLOAD_LENGTH   400     // (mm) The length of filament for a complete unload.    \
+  #define FILAMENT_CHANGE_UNLOAD_LENGTH      400  // (mm) The length of filament for a complete unload.    \
                                                  //   For Bowden, the full length of the tube and nozzle. \
                                                  //   For direct drive, the full length of the nozzle.    \
                                                  //   Set to 0 for manual unloading.
@@ -2012,7 +2012,7 @@
                                             //   Set to 0 for manual extrusion.                                    \
                                             //   Filament can be extruded repeatedly from the Filament Change menu \
                                             //   until extrusion is consistent, and to purge old filament.
-  #define ADVANCED_PAUSE_RESUME_PRIME   0   // (mm) Extra distance to prime nozzle after returning from park.
+  #define ADVANCED_PAUSE_RESUME_PRIME   0   // (mm) Extra distance to prime nozzle after returning from park. \
                                             //#define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is paused.
 
 // Filament Unload does a Retract, Delay, and Purge first:
